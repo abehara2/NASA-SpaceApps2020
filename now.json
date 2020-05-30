@@ -30,7 +30,7 @@
         }
       ],
     "env": {
-        "mongo_connection": "@f4t_db_uri_production_cz1v"
+        "mongo_connection": "@f4t_db_uri"
     },
     "build": {
       "env": {
