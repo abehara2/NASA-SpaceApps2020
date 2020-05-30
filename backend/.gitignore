@@ -1,2 +1,5 @@
-*.vscode
-secrets.js
+node_modules/
+config/
+package-lock.json
+package.json
+.env
