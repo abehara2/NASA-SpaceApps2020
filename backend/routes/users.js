@@ -90,15 +90,48 @@ module.exports = function(router) {
       if (user) {
         await FarmPost.updateOne(
           { _id: farmPostToAdd },
-          { $push: { volunteers: user._id } },
-          { new: true }
+          { $push: { volunteers: user._id } }
         );
         res.status(SUCCESS).send({
           message: "Added post to user's volunterEvents."
         });
       } else {
         res.status(NOT_FOUND).send({
-          message: "User not found"
+          message: "User not found."
+        });
+      }
+    } catch (err) {
+      res.status(SERVER_ERR).send({
+        message: SERVER_ERR_MSG
+      });
+    }
+  });
+
+  // update user consumer events
+  userConsumerRoute.put(async (req, res) => {
+    const { id } = req.params;
+    const { farmPostToAdd } = req.body;
+    try {
+      const farmPost = await FarmPost.findById(farmPostToAdd);
+      if (!farmPost) {
+        res.status(NOT_FOUND).send({
+          message: "Post not found."
+        });
+      }
+      const user = await User.findByIdAndUpdate(id, {
+        $push: { consumerEvents: farmPostToAdd }
+      });
+      if (user) {
+        await FarmPost.updateOne(
+          { _id: farmPostToAdd },
+          { $push: { consumers: user._id } }
+        );
+        res.status(SUCCESS).send({
+          message: "Added post to user's consumerEvents."
+        });
+      } else {
+        res.status(NOT_FOUND).send({
+          message: "User not found."
         });
       }
     } catch (err) {
