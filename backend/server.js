@@ -2,7 +2,7 @@
 var express = require("express"),
   router = express.Router(),
   mongoose = require("mongoose"),
-  secrets = require("./config/secrets"),
+  secrets =     process.env.DATABASE_URL || require("./config/secrets.js").mongo_connection, 
   bodyParser = require("body-parser");
 
 // Create our Express application
