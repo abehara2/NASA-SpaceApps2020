@@ -35,7 +35,7 @@
     },
     "build": {
       "env": {
-        "BACKEND_URL": "/api"
+        "REACT_APP_BACKEND_URL": "api"
       }
     }
   }
