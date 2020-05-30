@@ -1,8 +1,11 @@
 const { User } = require("../models");
+const { FarmPost } = require("../models");
 
 module.exports = function(router) {
   const usersRoute = router.route("/users");
   const userRoute = router.route("/users/:id");
+  const userVolunteerRoute = router.route("/users/:id/volunteer");
+  const userConsumerRoute = router.route("/users/:id/consumer");
 
   const SUCCESS = 200;
   const NOT_FOUND = 404;
@@ -68,5 +71,42 @@ module.exports = function(router) {
       });
     }
   });
+
+  // update user volunteer events
+  userVolunteerRoute.put(async (req, res) => {
+    const { id } = req.params;
+    const { farmPostToAdd, destination } = req.body;
+    try {
+      const farmPost = await FarmPost.findById(farmPostToAdd);
+      if (!farmPost) {
+        res.status(NOT_FOUND).send({
+          message: "Post not found."
+        });
+      }
+      const user = await User.findByIdAndUpdate(id, {
+        $push: { volunteerEvents: farmPostToAdd },
+        $set: { destination }
+      });
+      if (user) {
+        await FarmPost.updateOne(
+          { _id: farmPostToAdd },
+          { $push: { volunteers: user._id } },
+          { new: true }
+        );
+        res.status(SUCCESS).send({
+          message: "Added post to user's volunterEvents."
+        });
+      } else {
+        res.status(NOT_FOUND).send({
+          message: "User not found"
+        });
+      }
+    } catch (err) {
+      res.status(SERVER_ERR).send({
+        message: SERVER_ERR_MSG
+      });
+    }
+  });
+
   return router;
 };
