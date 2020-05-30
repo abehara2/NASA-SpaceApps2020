@@ -1,1 +1,1 @@
-# NASA-SpaceApps2020
+# NASA-SpaceApps2020 Challenge
