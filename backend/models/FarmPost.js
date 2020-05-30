@@ -6,10 +6,10 @@ var FarmPostSchema = new mongoose.Schema({
   name: { type: String, required: true },
   email: { type: String, required: true, unique: true },
   description: { type: String, required: true },
-  location: { type: String, required: true},
+  address: { type: String, required: true},
   time: {type: String, required: true},
-  volunteers: {type: [User], required: true},
-  consumers: {type: [User], required: true}
+  volunteers: {type: [String], required: true},
+  consumers: {type: [String], required: true}
 
 });
 
