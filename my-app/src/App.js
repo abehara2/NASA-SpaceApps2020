@@ -13,7 +13,7 @@ export default function App() {
       <div style={{fontSize: "2rem", marginTop:'25px', fontFamily: "Avenir Next"}}>
         <Grid style={{marginRight: "5%", marginLeft: "5%"}}>
           <Grid.Row>
-            <Grid.Column width={4}>
+            <Grid.Column width={3}>
               
             </Grid.Column>
             <Grid.Column width={8}>
@@ -21,7 +21,7 @@ export default function App() {
                 <b>Food4Thought</b>
               </div>
             </Grid.Column>
-            <Grid.Column width={2}>
+            <Grid.Column width={2.5}>
               <Button animated style={{width: "100%"}} onClick={() => setExplore(false)}>
                 <Button.Content visible>Your Events</Button.Content>
                 <Button.Content hidden>
@@ -29,7 +29,7 @@ export default function App() {
                 </Button.Content>
               </Button>
             </Grid.Column>
-            <Grid.Column width={2}>
+            <Grid.Column width={2.5}>
               <Button animated style={{width: "100%"}} onClick={() => setExplore(true)}>
                   <Button.Content visible>Explore</Button.Content>
                     <Button.Content hidden>
