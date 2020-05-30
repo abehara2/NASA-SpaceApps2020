@@ -5,7 +5,10 @@
     "builds": [
         {
           "src": "frontend/package.json",
-          "use": "@now/react"
+          "use": "@now/static-build",
+          "config": {
+            "distDir": "build"
+          }
         },
         {
           "src": "backend/*.js",
@@ -31,7 +34,7 @@
     },
     "build": {
       "env": {
-        "BACKEND_URL": "@backend_url"
+        "BACKEND_URL": "/api"
       }
     }
   }
