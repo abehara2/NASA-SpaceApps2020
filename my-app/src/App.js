@@ -25,7 +25,7 @@ export default function App() {
               <Button animated style={{width: "100%"}} onClick={() => setExplore(false)}>
                 <Button.Content visible>Your Events</Button.Content>
                 <Button.Content hidden>
-                  <Icon name='calendar' />
+                  <Icon name='calendar'/>
                 </Button.Content>
               </Button>
             </Grid.Column>
