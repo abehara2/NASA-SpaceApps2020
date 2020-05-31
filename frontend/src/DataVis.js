@@ -9,7 +9,7 @@ import Poverty from './Poverty';
 export default function DataVis() {
     return (
         <div id="container">
-            <Grid>
+            <Grid style={{ marginLeft: "7.5%", marginRight: "7.5%", marginTop: "2.5%" }}>
             <Grid.Row>
                 <Grid.Column width={8}>
                     <div id="crop">
