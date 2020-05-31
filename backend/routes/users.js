@@ -2,6 +2,7 @@ const { User } = require("../models");
 const { FarmPost } = require("../models");
 
 module.exports = function(router) {
+  const usersRouteMultiple = router.route("/users/many");
   const usersRoute = router.route("/users");
   const userRoute = router.route("/users/:id");
   const userVolunteerRoute = router.route("/users/:id/volunteer");
@@ -140,6 +141,47 @@ module.exports = function(router) {
       });
     }
   });
+
+  //post multiple documents
+  usersRouteMultiple.post(async (req, res) => {
+    for (let i = 0; i < req.length; i++) {
+      const {
+        name,
+        email,
+        destination,
+        time,
+        volunteerEvents,
+        consumerEvents,
+        description
+      } = req[i].body;
+      const newUser = new User({
+        name,
+        email,
+        destination,
+        time,
+        volunteerEvents,
+        consumerEvents,
+        description
+      });
+      try {
+        const user = await newUser.save();
+        if (user) {
+          res.status(SUCCESS).send({
+            message: "Successfully created new user."
+          });
+        } else {
+          res.status(NOT_FOUND).send({
+            message: "User not found."
+          });
+        }
+      } catch (err) {
+        res.status(SERVER_ERR).send({
+          message: SERVER_ERR_MSG
+        });
+      }
+    }
+    });
+  
 
   return router;
 };

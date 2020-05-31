@@ -1,6 +1,7 @@
 const { FarmPost } = require("../models");
 module.exports = function(router) {
   const farmRoutes = router.route("/farmPosts");
+  const farmRoutesMultiple = router.route("/farmPosts/many");
   const farmRoute = router.route("/farmPosts/:id");
   const farmRouteVolunteer = router.route("/farmPosts/:id/volunteers");
   const farmRouteConsumer = router.route("/farmPosts/:id/consumers");
@@ -143,6 +144,45 @@ module.exports = function(router) {
         message: "Internal server error."
       });
     }
+  });
+
+  //post multiple farmRoutes
+  farmRoutesMultiple.post(async (req, res) => {
+    for (let i = 0; i < req.length; i++) {
+    const {
+      name,
+      email,
+      description,
+      address,
+      time,
+      volunteers,
+      consumers
+    } = req[0].body;
+    const newPost = new FarmPost({
+      name,
+      email,
+      description,
+      address,
+      time,
+      volunteers,
+      consumers
+    });
+    try {
+      const post = await newPost.save();
+      if (!post) {
+        res.status(NOT_FOUND).send({
+          message: "Post not found."
+        });
+      }
+      res.status(SUCCESS).send({
+        message: `Successfully created new post with name: ${name}`
+      });
+    } catch (err) {
+      res.status(SERVER_ERR).send({
+        message: "Internal server error."
+      });
+    }
+  }
   });
   return router;
 };
