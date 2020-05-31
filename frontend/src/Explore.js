@@ -5,7 +5,7 @@ import { Grid, Button, Card, Icon, Image } from "semantic-ui-react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import Notiflix from "notiflix";
 import MapContainer from "./MapContainer";
-const place = "Archbishop Mitty";
+const place = "Gingrich Farms Illinois";
 
 export default function Explore() {
   return (
@@ -24,7 +24,7 @@ export default function Explore() {
       >
         {/* <MapContainer style={{ float: "center" }} /> */}
       </iframe>
-      <Button
+      {/* <Button
         animated
         style={{ width: "10%" }}
         onClick={() => Notiflix.Notify.Success("Just Testing Notiflix")}
@@ -33,7 +33,7 @@ export default function Explore() {
         <Button.Content hidden>
           <Icon name="right arrow" />
         </Button.Content>
-      </Button>
+      </Button> */}
     </div>
   );
 }
