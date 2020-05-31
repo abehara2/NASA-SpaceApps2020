@@ -18,7 +18,7 @@ export default function DataVis() {
             </div>
             <div id="text">
                 <p>These graphs present a visual aspect to the effect COVID-19 has had on our country. As seen in the graph at left, there has been a drop in price for all major crops. 
-                    According to the Law of Supply and Demand we can infer that <b style={{color: "red"}}>demand has increased while supply is constant</b> thus decreasing the equilibrium price and creating a <b style={{color: "red"}}>surplus</b>. </p>
+                    According to the Law of Supply and Demand we can infer that <b style={{color: "#FF5A60"}}>demand has increased at a constant supply</b> thus we can see that a <b style={{color: "#FF5A60"}}>surplus</b> has formed. </p>
             </div>
         </div>
     );
