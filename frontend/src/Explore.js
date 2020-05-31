@@ -4,7 +4,7 @@ import "semantic-ui-css/semantic.min.css";
 import { Grid, Button, Card, Icon, Image } from "semantic-ui-react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import Notiflix from "notiflix";
-// import MapContainer from "./MapContainer";
+import MapContainer from "./MapContainer";
 const place = "Archbishop Mitty";
 export default function Explore() {
   return (
