@@ -13,7 +13,7 @@ class Crop extends React.Component {
           type: 'bar',
           name: "December 2019",
           mode: 'lines+markers',
-          marker: {color: "b7b7b7"}
+          marker: {color: "#FF5A60"}
         },
         {type: 'bar', x: ["Soybeans", "Chicken", "Maize", "Beef"], y: [361.26/375.51, 1.27/1.85, 146.91/166.33, 4.45/5.94], name: "May 2020", mode: 'lines+markers', marker: { color:"666666" }}
       ]}
@@ -25,7 +25,7 @@ class Crop extends React.Component {
                 },
                 yaxis: {
                     title: {
-                        text: "% Price Change before/after COVID-19"
+                        text: "% of Price before COVID-19"
                     } 
                 },
                 showlegend: true,
