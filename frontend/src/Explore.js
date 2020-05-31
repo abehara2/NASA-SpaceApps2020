@@ -4,12 +4,13 @@ import "semantic-ui-css/semantic.min.css";
 import { Grid, Button, Card, Icon, Image } from "semantic-ui-react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import Notiflix from "notiflix";
-// import MapContainer from "./MapContainer";
+import MapContainer from "./MapContainer";
 const place = "Archbishop Mitty";
+
 export default function Explore() {
   return (
     <div>
-      {/* <iframe
+      <iframe
         className="map"
         src={`https://maps.google.com/maps?q=${place}&t=&z=13&ie=UTF8&iwloc=&output=embed`}
         style={{
@@ -22,7 +23,7 @@ export default function Explore() {
         }}
       >
         <MapContainer style={{ float: "center" }} />
-      </iframe> */}
+      </iframe>
       <Button
         animated
         style={{ width: "10%" }}
