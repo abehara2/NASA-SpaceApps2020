@@ -4,6 +4,7 @@ import "semantic-ui-css/semantic.min.css";
 import { Grid, Button, Card, Icon, Image } from "semantic-ui-react";
 import { getUser } from "./utils/apiWrapper";
 import VolCard from "./components/VolCard";
+import ConCard from "./components/ConCard";
 
 export default function ProfileEvents() {
   const [volEvents, setVolEvents] = useState([]);
@@ -20,7 +21,7 @@ export default function ProfileEvents() {
     };
     getCurrentUser();
   }, []);
-  // console.log(name)
+
   return (
     <div>
       <Grid
@@ -56,22 +57,9 @@ export default function ProfileEvents() {
               Deliveries
             </b>
           </div>
-          <div>
-            <Card style={{ marginTop: "2.5%", width: "100%" }}>
-              <Card.Content header="Gregory Farms" />
-              <Card.Content>
-                <Grid.Row>
-                  <b> Drop-off Window: </b>
-                </Grid.Row>
-                <Grid.Row>
-                  <b> Volunteer Name: </b>
-                </Grid.Row>
-                <Grid.Row>
-                  <b>Volunteer Contact: </b>
-                </Grid.Row>
-              </Card.Content>
-            </Card>
-          </div>
+          {conEvents.map(conEvent => (
+            <ConCard eventId={conEvent} />
+          ))}
         </Grid.Column>
       </Grid>
     </div>

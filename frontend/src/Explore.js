@@ -6,6 +6,7 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import Notiflix from "notiflix";
 import MapContainer from "./MapContainer";
 const place = "Archbishop Mitty";
+
 export default function Explore() {
   return (
     <div>
