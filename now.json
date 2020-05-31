@@ -31,12 +31,15 @@
         }
       ],
     "env": {
-        "DATABASE_URL": "@f4t_db_uri"
+        "DATABASE_URL": "@f4t_db_uri",
+        "APIKEYMAP" : "@apikeymap"
+         
         
     },
     "build": {
       "env": {
         "REACT_APP_BACKEND_URL": "/api"
+        
         
       }
     }
