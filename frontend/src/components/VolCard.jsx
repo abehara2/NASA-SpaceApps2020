@@ -6,15 +6,17 @@ export default function VolunteerCard(props) {
   const [event, setEvent] = useState([]);
   const [dropOffLocs, setDropOffLocs] = useState([]);
 
-  const getDropOffLocs = async volunteers => {
+  const getDropOffLocs = async consumers => {
     let dropOffLocArr = [];
-    for (let userId of volunteers) {
+    for (let userId of consumers) {
+      console.log(userId);
       const userResp = await getUser(userId);
       if (userResp.status === 200) {
-        const { destination } = userResp.data.data;
-        dropOffLocArr.push(destination);
+        const { address } = await userResp.data.data;
+        await dropOffLocArr.push(address);
+        // console.log(address);
       } else {
-        console.log(userResp.message);
+        // console.log(userResp.message);
       }
     }
     setDropOffLocs(dropOffLocArr);
@@ -25,9 +27,9 @@ export default function VolunteerCard(props) {
       const { eventId } = props;
       const eventResp = await getFarmPost(eventId);
       if (eventResp.status === 200) {
-        const eventObj = eventResp.data.data;
-        setEvent(eventObj);
-        getDropOffLocs(eventObj.volunteers);
+        const eventObj = await  eventResp.data.data;
+        await setEvent(eventObj);
+        await getDropOffLocs(eventObj.consumers);
       } else {
         console.log(eventResp.message);
       }
