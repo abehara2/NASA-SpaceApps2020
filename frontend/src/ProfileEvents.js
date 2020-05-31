@@ -16,7 +16,7 @@ export default function ProfileEvents() {
             let ce = await data.volunteerEvents;
             await setVolEvents(ve);
             await setConEvents(ce);
-            
+
         }
         getCurrentUser();
     },[volEvents, conEvents]);
