@@ -74,3 +74,18 @@ export const getFarmPost = farmPostId => {
       };
     });
 };
+export const getFarmPosts = () => {
+  const requestString = `${BASE_URL}/farmPosts`;
+  return axios
+    .get(requestString, {
+      headers: {
+        "Content-Type": "application/JSON"
+      }
+    })
+    .catch(error => {
+      return {
+        type: "GET_FARMER_POST_FAIL",
+        error
+      };
+    });
+};

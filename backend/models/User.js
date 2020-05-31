@@ -9,7 +9,9 @@ var UserSchema = new mongoose.Schema({
   time: { type: String, default: "" },
   volunteerEvents: { type: [String], default: [] },
   consumerEvents: { type: [String], default: [] },
-  description: { type: String, default: "" }
+  description: { type: String, default: "" },
+  lat: {type: Number, required: false},
+  long: {type: Number, required: false}
 });
 
 // Export the Mongoose model

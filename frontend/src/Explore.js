@@ -14,7 +14,7 @@ export default function Explore() {
         className="map"
         src={`https://maps.google.com/maps?q=${place}&t=&z=13&ie=UTF8&iwloc=&output=embed`}
         style={{
-          height: "500px",
+          height: "600px",
           width: "80%",
           marginLeft: "10%",
           marginRight: "10%",
