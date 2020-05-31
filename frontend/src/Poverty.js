@@ -16,7 +16,7 @@ class Poverty extends React.Component {
                 13.18,8.62,15.16,17.35,18.84,12.3,6.03,10.15,10.57,5.85,18.16,10.79,31.2,14.79,10.81,6.42],
             type: 'bar',
             mode: 'lines+markers',
-            marker: {color:'red'} 
+            marker: {color: "b7b7b7"} 
           }
         ]}
           layout={ 
@@ -31,9 +31,10 @@ class Poverty extends React.Component {
                       } 
                   },
                   showlegend: false,
+                  
                   width: "700px", 
                   height: "400px", 
-                  title: 'Percent Unemployment across States as of 5/19'
+                  title:{text:"<b>Percent Unemployment across States as of 5/19</b>", 'xanchor': 'center', 'yanchor': 'top'}
                   
               } 
           }

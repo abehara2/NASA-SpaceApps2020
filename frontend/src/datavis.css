@@ -1,0 +1,20 @@
+#crop {
+    position: absolute;
+    margin-left: 7vw;
+    padding: 50px;
+}
+
+#poverty {
+    position: absolute;
+    margin-left: 50vw;
+    padding: 50px;
+}
+
+#text {
+    box-sizing: border-box;
+    width: 50%;
+    position: absolute;
+    margin-top: 57vh;
+    margin-left: 27vw;
+    font-size: large;
+}

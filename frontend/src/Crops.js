@@ -11,11 +11,11 @@ class Crop extends React.Component {
           x: ["Soybeans", "Chicken", "Maize", "Beef"],
           y: [375.51/375.51, 1.85/1.85, 166.33/166.33, 5.94/5.94],
           type: 'bar',
-          name: "December 2019 Prices",
+          name: "December 2019",
           mode: 'lines+markers',
-          marker: {color: 'red'} 
+          marker: {color: "b7b7b7"}
         },
-        {type: 'bar', x: ["Soybeans", "Chicken", "Maize", "Beef"], y: [361.26/375.51, 1.27/1.85, 146.91/166.33, 4.45/5.94], name: "May 2020 Prices"},
+        {type: 'bar', x: ["Soybeans", "Chicken", "Maize", "Beef"], y: [361.26/375.51, 1.27/1.85, 146.91/166.33, 4.45/5.94], name: "May 2020", mode: 'lines+markers', marker: { color:"666666" }}
       ]}
         layout={ 
             {   xaxis: {
@@ -25,13 +25,14 @@ class Crop extends React.Component {
                 },
                 yaxis: {
                     title: {
-                        text: "% Price before COVID-19"
+                        text: "% Price Change before/after COVID-19"
                     } 
                 },
                 showlegend: true,
                 width: "700px", 
                 height: "400px", 
-                title: 'Commodity Prices Decline Over Past 4 months'
+                title: {"text": '<b>Commodity Prices Decline Over Past 4 months</b>', "xanchor": 'center', "yanchor": 'top'}
+                
                 
             } 
         }
