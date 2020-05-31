@@ -9,7 +9,7 @@ const place = "Archbishop Mitty";
 export default function Explore() {
   return (
     <div>
-      {/* <iframe
+      <iframe
         className="map"
         src={`https://maps.google.com/maps?q=${place}&t=&z=13&ie=UTF8&iwloc=&output=embed`}
         style={{
@@ -22,7 +22,7 @@ export default function Explore() {
         }}
       >
         <MapContainer style={{ float: "center" }} />
-      </iframe> */}
+      </iframe>
       <Button
         animated
         style={{ width: "10%" }}
