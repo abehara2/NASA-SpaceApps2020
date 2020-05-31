@@ -5,7 +5,13 @@ import {Grid, Button, Card, Icon, Image } from 'semantic-ui-react';
 import {getUser} from "./utils/apiWrapper";
 
 export default function ProfileEvents() {
-    // let name = getUser("5ed2d2d2b81278eceffe1fe2")
+    useEffect(()=> {
+        async function getCurrentUser() {
+            let name =  await getUser("5ed2d2d2b81278eceffe1fe2").data.name
+            console.log(name)
+        }
+        getCurrentUser();
+    },[]);
     // console.log(name)
     return(
         <div >
