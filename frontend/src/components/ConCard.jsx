@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Card } from "semantic-ui-react";
 import { getUser, getFarmPost } from "../utils/apiWrapper";
 
-export default function VolunteerCard(props) {
+export default function ConCard(props) {
   const [volunteer, setVolunteer] = useState("");
 
   const getVolunteerInfo = async volunteers => {
