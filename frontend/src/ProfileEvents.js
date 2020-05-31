@@ -7,7 +7,7 @@ import {getUser} from "./utils/apiWrapper";
 export default function ProfileEvents() {
     useEffect(()=> {
         async function getCurrentUser() {
-            let name =  await getUser("5ed2d2d2b81278eceffe1fe2").data.name
+            let name =  await getUser("5ed2d2d2b81278eceffe1fe2")
             console.log(name)
         }
         getCurrentUser();
