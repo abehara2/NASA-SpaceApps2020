@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import { Map, GoogleApiWrapper, Marker } from 'google-maps-react';
-import {getFarmPosts} from "../utils/apiWrapper"
+import {useState, useEffect} from 'react'
+import { Map, GoogleApiWrapper, MarkerWithLabel } from 'google-maps-react';
+import {getFarmPosts} from "./utils/apiWrapper"
 
 
 
@@ -11,14 +12,14 @@ export function MapContainer() {
     async function getFarms() {
       let object = await getFarmPosts();
       for (let json in object.body.data) {
-        data = {
+        let data = {
           "name": json.name,
           "latlong": {
             "lat": json.lat,
-            "long": json,long,
+            "long": json.long,
           }
         }
-        markerData.push(data)
+        markerData.push(data);
       }
     }
     getFarms()
@@ -33,7 +34,7 @@ export function MapContainer() {
         }}
       >
         {
-          markerPos.map(data => (
+          markerData.map(data => (
             <MarkerWithLabel
               position={{ lat: -34.397, lng: 150.644 }}
               labelStyle={{backgroundColor: "yellow", fontSize: "32px", padding: "16px"}}
