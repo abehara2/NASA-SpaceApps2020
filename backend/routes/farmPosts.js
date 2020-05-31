@@ -87,62 +87,62 @@ module.exports = function(router) {
     }
   });
 
-  // //update volunteers
-  // farmRouteVolunteer.put(async (req, res) => {
-  //   const { id } = req.params;
-  //   const { volunteers} = req.body;
-  //   const fieldsToUpdate = {};
-  //   if (volunteers) {
-  //     fieldsToUpdate["volunteers"] = volunteers;
-  //   }
-  //   try {
-  //     const post = await FarmPost.findByIdAndUpdate(
-  //       id,
-  //       { $set: fieldsToUpdate },
-  //       { new: true }
-  //     );
-  //     if (!post) {
-  //       res.status(NOT_FOUND).send({
-  //         message: "Post not found."
-  //       });
-  //     }
-  //     res.status(SUCCESS).send({
-  //       message: "Post volunteers updated successfully."
-  //     });
-  //   } catch (err) {
-  //     res.status(SERVER_ERR).send({
-  //       message: "Internal server error."
-  //     });
-  //   }
-  // });
+  //update volunteers
+  farmRouteVolunteer.put(async (req, res) => {
+    const { id } = req.params;
+    const { volunteers} = req.body;
+    const fieldsToUpdate = {};
+    if (volunteers) {
+      fieldsToUpdate["volunteers"] = volunteers;
+    }
+    try {
+      const post = await FarmPost.findByIdAndUpdate(
+        id,
+        { $set: fieldsToUpdate },
+        { new: true }
+      );
+      if (!post) {
+        res.status(NOT_FOUND).send({
+          message: "Post not found."
+        });
+      }
+      res.status(SUCCESS).send({
+        message: "Post volunteers updated successfully."
+      });
+    } catch (err) {
+      res.status(SERVER_ERR).send({
+        message: "Internal server error."
+      });
+    }
+  });
 
-  // //update volunteers
-  // farmRouteConsumer.put(async (req, res) => {
-  //   const { id } = req.params;
-  //   const { consumers } = req.body;
-  //   const fieldsToUpdate = {};
-  //   if (consumers) {
-  //     fieldsToUpdate["consumers"] = consumer;
-  //   }
-  //   try {
-  //     const post = await FarmPost.findByIdAndUpdate(
-  //       id,
-  //       { $set: fieldsToUpdate },
-  //       { new: true }
-  //     );
-  //     if (!post) {
-  //       res.status(NOT_FOUND).send({
-  //         message: "Post not found."
-  //       });
-  //     }
-  //     res.status(SUCCESS).send({
-  //       message: "Post consumers updated successfully."
-  //     });
-  //   } catch (err) {
-  //     res.status(SERVER_ERR).send({
-  //       message: "Internal server error."
-  //     });
-  //   }
-  // });
+  //update volunteers
+  farmRouteConsumer.put(async (req, res) => {
+    const { id } = req.params;
+    const { consumers } = req.body;
+    const fieldsToUpdate = {};
+    if (consumers) {
+      fieldsToUpdate["consumers"] = consumer;
+    }
+    try {
+      const post = await FarmPost.findByIdAndUpdate(
+        id,
+        { $set: fieldsToUpdate },
+        { new: true }
+      );
+      if (!post) {
+        res.status(NOT_FOUND).send({
+          message: "Post not found."
+        });
+      }
+      res.status(SUCCESS).send({
+        message: "Post consumers updated successfully."
+      });
+    } catch (err) {
+      res.status(SERVER_ERR).send({
+        message: "Internal server error."
+      });
+    }
+  });
   return router;
 };

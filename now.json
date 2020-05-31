@@ -31,11 +31,13 @@
         }
       ],
     "env": {
-        "mongo_connection": "@f4t_db_uri"
+        "DATABASE_URL": "@f4t_db_uri"
+        
     },
     "build": {
       "env": {
         "REACT_APP_BACKEND_URL": "/api"
+        
       }
     }
   }
