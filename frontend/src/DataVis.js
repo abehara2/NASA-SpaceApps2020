@@ -9,6 +9,7 @@ import Poverty from './Poverty';
 export default function DataVis() {
     return (
         <div id="container">
+            <Grid>
             <Grid.Row>
                 <Grid.Column width={8}>
                     <div id="crop">
@@ -27,6 +28,7 @@ export default function DataVis() {
                         According to the Law of Supply and Demand we can infer that <b style={{color: "#FF5A60"}}>demand has increased at a constant supply</b> thus we can see that a <b style={{color: "#FF5A60"}}>surplus</b> has formed. </p>
                 </div>
             </Grid.Row>
+            </Grid>
         </div>
     );
 }
