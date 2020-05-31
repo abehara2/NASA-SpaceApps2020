@@ -10,18 +10,16 @@ export default function App() {
   const [explore, setExplore] = useState(true);
   return(
     <>
-      <div style={{fontSize: "2rem", marginTop:'25px', fontFamily: "Avenir Next"}}>
-        <Grid style={{marginRight: "5%", marginLeft: "5%"}}>
+      <div style={{fontSize: "2rem", paddingTop:'25px', fontFamily: "Avenir Next", backgroundColor: "#FF5A60"}}>
+        <Grid style={{marginRight: "2.%", marginLeft: "2.5%"}}>
           <Grid.Row>
-            <Grid.Column width={4}>
-              
-            </Grid.Column>
-            <Grid.Column width={6}>
-              <div align="middle" justify="center" style={{marginTop: "10px"}}>
+            <Grid.Column width={12}>
+            <div style={{marginTop: "10px", color: "white"}}>
                 <b>Food4Thought</b>
               </div>
             </Grid.Column>
-            <Grid.Column width={3}>
+            
+            <Grid.Column width={2}>
               <Button animated style={{width: "100%"}} onClick={() => setExplore(false)}>
                 <Button.Content visible>Your Events</Button.Content>
                 <Button.Content hidden>
@@ -29,7 +27,7 @@ export default function App() {
                 </Button.Content>
               </Button>
             </Grid.Column>
-            <Grid.Column width={3}>
+            <Grid.Column width={2}>
               <Button animated style={{width: "100%"}} onClick={() => setExplore(true)}>
                   <Button.Content visible>Explore</Button.Content>
                     <Button.Content hidden>
