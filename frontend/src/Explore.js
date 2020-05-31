@@ -22,7 +22,7 @@ export default function Explore() {
           borderRadius: "1%"
         }}
       >
-        <MapContainer style={{ float: "center" }} />
+        {/* <MapContainer style={{ float: "center" }} /> */}
       </iframe>
       <Button
         animated
