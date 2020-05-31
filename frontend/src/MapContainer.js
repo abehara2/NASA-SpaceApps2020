@@ -1,17 +1,22 @@
 import React, { Component } from 'react';
-import {useState, useEffect} from 'react'
-import { Map, GoogleApiWrapper, MarkerWithLabel } from 'google-maps-react';
+import {useState, useEffect, state} from 'react'
+import { GoogleMap, GoogleApiWrapper, MarkerWithLabel } from 'google-maps-react';
 import {getFarmPosts} from "./utils/apiWrapper"
 
 
-
-
-export function MapContainer() {
-  let markerData = []
-  useEffect(()=> {
-    async function getFarms() {
+export class MapContainer extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {markerData: []}
+  }
+  getFarms = this.getFarms.bind(this);
+  componentDidMount() {
+    this.getFarms();
+  }
+    async getFarms() {
       let object = await getFarmPosts();
-      for (let json in object.body.data) {
+      // console.log(object);
+      for (let json in object.data.data.data) {
         let data = {
           "name": json.name,
           "latlong": {
@@ -19,13 +24,12 @@ export function MapContainer() {
             "long": json.long,
           }
         }
-        markerData.push(data);
+        this.state.markerData.push(data);
       }
     }
-    getFarms()
-  },[]);
+  render() {
   return (
-      <Map
+      <GoogleMap
         google={this.props.google}
         zoom={7}
         initialCenter={{
@@ -34,19 +38,20 @@ export function MapContainer() {
         }}
       >
         {
-          markerData.map(data => (
+          this.state.markerData.map(data => (
             <MarkerWithLabel
               position={{ lat: -34.397, lng: 150.644 }}
               labelStyle={{backgroundColor: "yellow", fontSize: "32px", padding: "16px"}}
             >
-              <div>{data.name}</div>
+              <div>hello</div>
             </MarkerWithLabel>
             // <Marker position={data.latlong} />
           ))
         }
-      </Map>
+      </GoogleMap>
     
     );
+  }
 }
 
 
