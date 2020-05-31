@@ -144,7 +144,7 @@ module.exports = function(router) {
 
   //post multiple documents
   usersRouteMultiple.post(async (req, res) => {
-    for (let i = 0; i < req.length; i++) {
+    for (let i = 0; i < req.body.data.length; i++) {
       const {
         name,
         email,
@@ -153,7 +153,7 @@ module.exports = function(router) {
         volunteerEvents,
         consumerEvents,
         description
-      } = req[i].body;
+      } = req.body.data[i];
       const newUser = new User({
         name,
         email,

@@ -148,7 +148,7 @@ module.exports = function(router) {
 
   //post multiple farmRoutes
   farmRoutesMultiple.post(async (req, res) => {
-    for (let i = 0; i < req.length; i++) {
+    for (let i = 0; i < req.body.data.length; i++) {
     const {
       name,
       email,
@@ -157,7 +157,7 @@ module.exports = function(router) {
       time,
       volunteers,
       consumers
-    } = req[0].body;
+    } = req.body.data[i];
     const newPost = new FarmPost({
       name,
       email,
