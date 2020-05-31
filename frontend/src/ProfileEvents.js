@@ -24,6 +24,7 @@ export default function ProfileEvents() {
 
   return (
     <div>
+      
       <Grid
         style={{ marginLeft: "7.5%", marginRight: "7.5%", marginTop: "2.5%" }}
       >
