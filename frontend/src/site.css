@@ -1,0 +1,13 @@
+.mapContainer {
+    top: 30px;
+    position: absolute;
+    right: 300px;
+    left: 300px;
+    bottom: 100px;
+    border-top: solid #FF5A60 4px;
+    border-bottom: solid #FF5A60 4px;
+    border-right: solid #FF5A60 4px;
+    border-left: solid #FF5A60 4px;
+    /* padding-bottom: 10px; */
+}
+

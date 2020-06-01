@@ -5,6 +5,7 @@ import {Grid, Button, Card, Icon, Image } from 'semantic-ui-react';
 import ProfileEvents from "./ProfileEvents.js";
 import Explore from "./Explore.js";
 import DataVis from "./DataVis.js";
+import Application from "./mapb.js";
 
 
 export default function App() {
@@ -12,6 +13,7 @@ export default function App() {
   const project = () => {
           switch(explore) {
     
+    //         case 0:   return <DataVis/>;
             case 0:   return <DataVis/>;
             case 1:   return <ProfileEvents/>;
             case 2: return <Explore/>;

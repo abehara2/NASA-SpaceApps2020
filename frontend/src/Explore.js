@@ -1,16 +1,18 @@
 import React from "react";
 import "./App.css";
 import "semantic-ui-css/semantic.min.css";
+import "./site.css";
 import { Grid, Button, Card, Icon, Image } from "semantic-ui-react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import Notiflix from "notiflix";
 import MapContainer from "./MapContainer";
+import Application from "./mapb.js"
 const place = "Gingrich Farms Illinois";
 
 export default function Explore() {
   return (
     <div>
-       <iframe
+       {/* <iframe
         className="map"
         src={`https://maps.google.com/maps?q=${place}&t=&z=13&ie=UTF8&iwloc=&output=embed`}
         style={{
@@ -21,17 +23,20 @@ export default function Explore() {
           marginTop: "2.5%",
           borderRadius: "1%"
         }}
-      >
+      > */}
       {/* <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCrWk-gOi0LEVcfJMq_uqds2j-WCz78sP4&callback=initMap"
   type="text/javascript"></script> */}
         {/* <MapContainer style={{ float: "center" }} /> */}
-      </iframe>
+      {/* </iframe> */}
       <Grid>
+        <Grid.Row style={{height: "600px"}}>
+          <Application/>
+        </Grid.Row>
         <Grid.Row justify="center" align="middle">
-          <div justify="center" align = "middle" style={{fontFamily: "Avenir Next", fontSize: "2rem", width: "20%", marginLeft: "40%", marginRight: "40%", marginTop: "2%"}}>
-            <b>Gingrech Farms</b>
+          <div justify="center" align = "middle" style={{fontFamily: "Avenir Next", fontSize: "2rem", width: "20%", marginLeft: "40%", marginRight: "40%", marginTop: "-4%"}}>
+            <b>Gingrich Farms</b>
           </div>
-          <div justify="center" align = "middle" style={{fontFamily: "Avenir Next", fontSize: "1.75rem", width: "40%", marginLeft: "30%", marginRight: "30%", marginTop: "2%"}}>
+          <div justify="center" align = "middle" style={{fontFamily: "Avenir Next", fontSize: "1.75rem", width: "40%", marginLeft: "30%", marginRight: "30%", marginTop: "-1%"}}>
             <b>Address: </b> 1442 IL-133, Lovington, IL 61937
           </div>
           <div justify="center" align = "middle" style={{fontFamily: "Avenir Next", fontSize: "1.75rem", width: "40%", marginLeft: "30%", marginRight: "30%", marginTop: "2%"}}>
